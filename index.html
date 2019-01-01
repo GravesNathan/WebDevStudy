@@ -1,0 +1,282 @@
+<div w3-include-html="header.html"></div>
+  <title>Small Shop</title>
+</head>
+<body onload="prepPage()">
+  <div id='loading' class = 'loading'>
+      <img class = 'loadingCircle' src='media/images/LoadingCircle.png' alt='Loading'></img>
+  </div>
+
+  <!--<canvas id='smallCanvas' width='100' height='100'></canvas>-->
+
+
+  <div w3-include-html="menu.html"></div>
+
+
+<div id='main' class='main'>
+    <div class="slideWrapper">
+      <div class="slides"></div>
+    </div>
+    <p>Image sources come from
+      <a href='https://thenextweb.com/gaming/2017/10/11/game-boy-mini-in-the-works/'>thenextweb.com</a>
+      ,<a href='https://fr.wikipedia.org/wiki/Fichier:Atari-2600-Console.jpg'>widipedia.org</a>
+      ,<a href='https://www.denofgeek.com/us/games/video-games/263187/a-guide-to-buying-classic-game-consoles-on-amazon'>denofgeeke.com</a>
+      , and <a href='https://www.pcworld.com/article/3190347/gaming/how-to-build-a-raspberry-pi-retrogaming-emulation-console.html'>pcworld.com</a>
+    </p>
+    <!--<div class='advertiseWrapper'>
+      <div class='ads'>
+        <button id='apiTest'>API Test</button>
+      </div>
+    </div>
+    <p id='adsError'></p>
+    -->
+    <!--******User to Modify Shop********-->
+    <div id='editShopContent'>
+      <h1>Shop Editor</h1>
+    <p>
+      This site is designed to help you to create a very simple demo shop.
+      Three default items have been included in the table at the <u>bottom of this page</u>.
+      You can use the form below to make modifications to the shop.
+      Selecting "Shop Home" in the menu bar will bring you to an end user view.
+      <br /><br />
+      You may reset the shop to it's default items anytime with this button.
+      <button onclick='resetShop()'>Reset Shop</button>
+    </p>
+
+    <!--Use Form and then JS DOM to create, remove, insert, and appent to list-->
+    <div class ='formWrapper'>
+    <form id='customize'><!--Action blank to submit to own page-->
+      <label>What do you want to do?</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <select name='choice' id='choiceId' onchange='NextView()'>
+          <option></option>
+          <option>Add an Item</option>
+          <option>Remove an Item</option>
+          <option>Update an Item</option>
+          <!--<option>Update Shop Styles</option>-->
+        </select>
+        <br />
+      <label id='itemNumberLabel' class='offScreen'>Item Number:&nbsp&nbsp&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type='number' id='formItem' /> *<br /></label>
+
+      <label id='productNameLabel' class='offScreen'>Product Name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type='text' id='formProduct' /><br /></label>
+
+      <label id='costLabel' class='offScreen'>Cost:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type='number' id='formCost' /> *<br /></label>
+
+      <label id='infoLabel' class='offScreen'>Additional Info:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type='text' id='formInfo' /><br /></label>
+
+
+      <div id='astrix' class='offScreen'>
+        <br />
+        *Non-number characters are removed if the first set of characters are numbers.
+        Only the first set of numbers will be taken as your input.<br />
+      </div>
+<!--
+      <label id='bgColorLabel' class='offScreen'>Background Color
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <select name='bgColor'>
+          <option>black</option>
+          <option>blue</option>
+          <option>white</option>
+          <option>grey</option>
+        </select>
+      <br /></label>
+
+      <label id='fontColorLabel' class='offScreen'>Font Color
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <select name='fontColor'>
+          <option>black</option>
+          <option>blue</option>
+          <option>white</option>
+          <option>grey</option>
+        </select>
+      <br /></label>
+
+      <label id='shopBgColorLabel' class='offScreen'>Products Background Color
+        &nbsp&nbsp<select name='productsBgColor'>
+          <option>black</option>
+          <option>blue</option>
+          <option>white</option>
+          <option>grey</option>
+        </select>
+      <br /></label>
+-->
+    <!--
+      <label>Products Font Color
+        <select name='productsFontColor'>
+          <option>black</option>
+          <option>blue</option>
+          <option>white</option>
+          <option>grey</option>
+        </select>
+      </label>
+    -->
+      <!--<input type="submit" value="Placeholder">-->
+    </form>
+
+    <br />
+
+    <button type="button" id='addItem' onClick='customizeShop(this.id)' class='offScreen'>Add Item</button>
+    <button type="button" id='removeItem' onClick='customizeShop(this.id)' class='offScreen'>Remove Item</button>
+    <button type="button" id='updateItem' onClick='customizeShop(this.id)' class='offScreen'>Update Item</button>
+  <!--  <button type="button" id='updateStyles' onClick='customizeShop(this.id)' class='offScreen'>Update Page Style</button>-->
+
+    </div>
+    <p id='customizeResult'></p>
+    <!--Should use id based JS to make this bold and vivid font if bad input-->
+
+    <!--Note that a button type defaults to submit (at least if a form is
+    on the page.)  Avoid this with type="button"-->
+
+    </div>
+
+
+    <div id='shopHomeContent'>
+      <p id="storageNotice" style="color:yellow;"></p>
+      <table id='productsTable' class='shopTable'>
+        <tr>
+          <th>
+            Item Number
+          </th>
+          <th>
+            Product
+          </th>
+          <th>
+            Cost
+          </th>
+          <th>
+
+          </th>
+          <th class='hideOnSmall'>
+            Additional Info
+          </th>
+        </tr>
+        <tr>
+          <td id="row0num">
+          </td>
+          <td id="row0name" class='itemName'>
+          </td>
+          <td id="row0cost">
+          </td>
+          <td>
+            <button id="0" type="button" onClick="addToCart(this.id);">Add to Cart</button>
+          </td>
+          <td class='hideOnSmall'>
+            <div class='media'>
+            <video controls>
+              <source src='media/videos/sega.mp4' type='video/mp4' />
+              <source src='media/videos/sega.ogv' type='video/ogg' />
+              <source src='media/videos/sega.webm' type='video/webm' />
+              <p>Your browser does not support HTML5.  You can download the video <a href='media/videos/sega.mp4'>here</a>.</p>
+            </video>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td id="row1num">
+          </td>
+          <td id="row1name" class='itemName'>
+          </td>
+          <td id="row1cost">
+          </td>
+          <td>
+            <button id="1" type="button" onClick="addToCart(this.id);">Add to Cart</button>
+          </td>
+          <td class='hideOnSmall'>
+            <div class='media'>
+              <div class = 'images' id='scrollImages'>
+                <img src='media/images/sNintendo1.JPG' alt='Super Nintendo Picts' />
+                <img src='media/images/sNintendo2.JPG' alt='Super Nintendo Picts' />
+                <img src='media/images/sNintendo3.JPG' alt='Super Nintendo Picts' />
+                <img src='media/images/sNintendo4.JPG' alt='Super Nintendo Picts' />
+                <img src='media/images/sNintendo5.JPG' alt='Super Nintendo Picts' />
+                <img src='media/images/sNintendo6.JPG' alt='Super Nintendo Picts' />
+              </div>
+            </div>
+            <div class='centerAll'>
+              <button class='imageScrollBtn' id='pauseResume' onclick='scrollImage(this.id)'>Pause/Resume</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td id="row2num">
+          </td>
+          <td id="row2name" class='itemName'>
+          </td>
+          <td id="row2cost">
+          </td>
+          <td>
+            <button id="2" type="button" onClick="addToCart(this.id);">Add to Cart</button>
+          </td>
+          <td class='hideOnSmall'>
+            <div class='media'>
+            <audio controls>
+              <source src='media/audio/GameBoyColor.m4a' type='audio/m4a' />
+              <source src='media/audio/GameBoyColor.mp3' type='audio/mpeg' />
+              <source src='media/audio/GameBoyColor.ogg' type='audio/ogg' />
+              <source src='media/audio/GameBoyColor.wav' type='audio/wav' />
+              <p>The audio content is not supported or has been blocked.  You can download a file <a href='media/audio/gameBoyColor'>here</a>.</p>
+            </audio>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <p id="viewCart"></p>
+      <p id='shopTotal'>Total: <b id="total">0</b></p>
+      <button type="button" onclick="clearCart();">Clear Cart</button>
+      </div><!--End of shopHome-->
+        <!--Edited out until a true export/import is used
+        <button type="button" onclick="exportCart();">Export Cart</button>
+        <button type="button" onclick="importCart();">Import Cart</button>
+        -->
+
+    <!--I'm curious why it doesn't show the Braces on ourside according to the braces format-->
+    <!--Commented out until a true export/import is added.
+    <p>Json "Export" Test:<b id="jsonCart"></b></p>
+    <p>"Import" Cart Test: <br /><b id="importCart"></b></p>
+    <p>Total: <b id="total2">0</b></p>
+    -->
+
+
+    <!--*********Character Select Page************-->
+  <div id='selectCharacterContent'>
+  <h2>Popular Characters in Dota 2</h2>
+  <p>
+    You can use the Dota 2 API with the button below.  It pulls a list of popular
+    Dota2 characters, their attributes, and common roles they play.<br /><br />
+    <button id="ajaxButton" type="button">Get Dota 2 Stats</button>
+  </p>
+  <p id='gameStats'>
+
+  </p>
+  </div>
+
+
+</div><!--End of main-->
+  <script src="main.js" type="text/javascript"></script>
+
+<!--To DO Items ************
+Make a nice menu with CSS/JS Transitions etc.  Aim for allowing the user
+to customize some aspect of the store to their preference with classes
+or with other JS manipulation.  Have a customize screen, use local storage,
+reflect changes on main screen.  Or rather a menu that pops that in and out of the
+way of the shop.  Make it mobile friendly.
+
+Also allow them to set their own colors for fonts, classes, table, etc.
+I basically want a dynamically cusomizable shop
+Also, keep it simple to get to basic!
+
+Specifics:
+--Menu bar hide hide and slide in from left, button on top left.  Requires onClick and/or onTouch, CSS transition to slide in and out.
+--onload already in use.  Onclick/onTouch should be used with menu.
+--The little information i would be handy.  Maybe use a transition/transformation/animation (whatever is needed)
+To bring make the information visible in small cloud window (probably with positive z-index).
+--Maybe make the item name a card that will flip over to item description or additional information.
+--A slide screen "presentation" that shows some items in the "catalog" or special deals would be nice.
+
+-->
+<!--'&#9432'-->
+<div w3-include-html="footer.html"></div>

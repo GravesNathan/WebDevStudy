@@ -1,0 +1,456 @@
+table, th, td{
+  border: 1px solid white;
+}
+
+/*So far have usage of transitions and transforms in menu button.
+transition and transform are used in the menu box
+animation is used with slides images
+animation is used with another slider with pause button included
+
+Need one more of each, then to make good use of ajax.
+Transition and transform are easy enough to work in for the different page loads for hidden and not hidden.
+Perhaps I can work the animation into this idea, or into the ajax, by showing only a part of the info at a time
+so a bunch of ajax stuff isn't loaded at once.
+
+If needed I can have a user avitar on top of the page and have it do a fancy spin animation when the user returns
+and displays their user avitar, then it can say welcome back.
+*/
+
+td{
+  width:auto;
+  /*max-width: 50%;*/
+}
+.media{
+  max-height: 600px;
+  overflow: hidden;
+  white-space: nowrap;/*forces images to keep on one line*/
+}
+
+td img {
+  width: 50%;
+  height: auto;
+}
+
+td{
+  overflow-wrap: break-word;
+  /*text-overflow: clip;*/
+}
+
+
+
+.imageScrollBtn{
+  margin-left: auto;
+  margin-right: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: black;
+  background-color: white;
+}
+
+#pauseResume{
+  border-radius: 50%;
+  width: auto;
+  max-width: 100%;
+}
+
+.images{
+  animation: slideImages 10s linear infinite;
+  -webkit-animation: slideImages 10s linear infinite;
+}
+
+audio{
+  max-width: 100%;
+}
+
+@keyframes slideImages{
+  5%{
+    transform: translate3d(0,0,0);
+  }
+  55%{
+    transform: translate3d(-100%,0,0);
+  }
+  65%{
+    transform: translate3d(-100%,0,0);
+  }
+  95%{
+    transform: translate3d(0,0,0);
+  }
+}
+
+@-webkit-keyframes slideImages{
+  5%{
+    transform: translate3d(0,0,0);
+  }
+  55%{
+    transform: translate3d(-100%,0,0);
+  }
+  65%{
+    transform: translate3d(-100%,0,0);
+  }
+  95%{
+    transform: translate3d(0,0,0);
+  }
+}
+
+.paused{
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+/******need to add stuff for buttons still ******/
+
+.main{
+  width: 80%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+video {
+  width:100%;
+  height:auto;
+  max-height: 240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+#smallCanvas{
+  top:0;
+  float:right;
+}
+*/
+
+#menuBox{
+  width:30%;
+  min-width: 110px;
+  max-width: 200px;
+  background-color: black;
+  float: left;
+  background-image: linear-gradient(to bottom, #000000 0%, #000066 100%);
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 40px;
+  left: 0px;
+  z-index: 1;
+  height: 100%;
+  transition: transform .5s;
+  -webkit-transition: -webkit-transform .5s
+  transform:translateX(-100%);/*transition left to edge of page*/
+  -ms-transform:translateX(-100%);
+  -webkit-transform:translateX(-100%);
+  /*Next I need a button to bring menu back and have it leave*/
+  /*Example from Didi uses span for the menu lines, span, then before, then after
+  One line was hid, the others turned into an X.  In CSS(SCSS) section click to
+  view compiled CSS for more details.
+  https://codepen.io/didimillermom/pen/PRwXqo
+  */
+}
+
+#menuBox.open{
+  transition: transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+  transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+}
+
+#menu{
+  width: 100%;
+  height:auto;
+  border: none;
+  z-index: inherit;
+}
+
+
+#menu table, #menu tr, #menu td{
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#menu td:hover{
+  transform:scale(1.1,1.1);
+  -ms-transform:scale(1.1,1.1);
+  -webkit-transform:scale(1.1,1.1);
+}
+
+#menuToggle{ /*z-index 2 to be in front of menu which is 1*/
+  height: auto;
+  width: auto;
+  position: fixed;
+  top:10;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#menuBar{
+  display: block;
+  background-color: white;
+  height: 5px;
+  width: 35px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  content:'';
+  transition: transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+}
+
+#menuBar::before{
+  display: block;
+  background-color: white;
+  height: 5px;
+  width: 35px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  content:'';
+  transition: transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+  transform: translateY(-10px);
+}
+
+#menuBar::after{
+  display: block;
+  background-color: white;
+  height: 5px;
+  width: 35px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  content:'';
+  transform: translateY(-5px);
+}
+
+#menuToggle.open #menuBar{
+  transition: transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+  transform: rotate(45deg) translate(0,0);
+  -ms-transform: rotate(45deg) translate(0,0);
+  -webkit-transform: rotate(45deg) translate(0,0);
+}
+
+#menuToggle.open #menuBar::before{
+  transition: transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+  transform: rotate(90deg) translate(0,0);
+  -ms-transform: rotate(90deg) translate(0,0);
+  -webkit-transform: rotate(90deg) translate(0,0);
+
+}
+/* matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())*/
+
+#menuToggle.open #menuBar::after{
+  /*
+  transition: transform .5s;
+  -webkit-transition: -webkit-transform .5s;
+*/
+  transform: translate(-200%,0);
+  -ms-transform: translate(-200%,0);
+  -webkit-transform: translate(-200%,0);
+}
+
+
+body{
+  background-color: black;
+  z-index: -2;
+  background: linear-gradient(to bottom, #000000 0%, #000033 100%);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+}
+
+.loading{
+  background-color: black;
+  z-index: 5;
+  background-position: left top;
+  background-size: cover;
+  height: 110%;
+  width: 110%;
+  position: fixed;
+  opacity: .99;
+  /*If top gaps appear transform up a tad*/
+}
+
+
+.loadingCircle{
+  background-color: black;
+  z-index: 6;
+  position: relative;
+  width:5%;
+  height:auto;
+  top: 45%;
+  left: 45%;
+  animation: loadingCircle 2s linear;
+  -webkit-animation: loadingCircle 2s linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes loadingCircle{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+#banner{
+  width:100%;
+  height:auto;
+  min-height: 100px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  background-color: black;
+  background-image: url('media/images/Stars.jpg');
+  background-size: cover;
+}
+
+/*set default text color for almost everything to white*/
+p, body, div, table, tr, td, form, a{
+  color: white;
+  font-size: 1em;
+}
+
+.slideWrapper{
+  overflow: hidden;
+}
+
+.slides{
+  background: url('media/images/sliding-background.jpg') repeat-x;
+  height: 440px;/*desired height*/
+  width: 5076px;/*arbitrary high number, divisible by number of seconds in loop (60 here)*/
+  animation: slidesKey 60s linear infinite;
+  -webkit-animation: slidesKey 60s linear infinite;
+}
+/*We can use animation to do anything with transitions, transforms, and all other CSS
+,but allowing us greater control of the timing with keyframes*/
+/*Use animation keyframe to specify the animation for .slides class*/
+@keyframes slidesKey{
+  0%{
+    transform: translate3d(0,0,0);
+  }
+  100%{
+    transform: translate3d(-3720px,0,0);/*I set this to match the image width*/
+  }
+}
+
+@-webkit-keyframes slidesKey{
+  0%{
+    transform: translate3d(0,0,0);
+  }
+  100%{
+    transform: translate3d(-3720px,0,0);/*I set this to match the image width*/
+  }
+}
+/*Adding i symbol &#9432 as before or after in class itemName
+The HTML code for the i is \0024D8 in CSS (ASCII?)*/
+/*
+.itemName::after{
+  content: 	'<span class="infoIcon">"\0024D8"</span>';
+}
+*/
+.infoHover{
+  /*transform:rotate3d(0,1,0,180deg);*/
+/*  display: block;
+  z-index: 1;
+  position: absolute;
+  background-color: blue;
+  border-radius: 20px;
+  width: 15%;
+  height: auto;
+*/
+}
+
+.infoHover:after{
+/*
+  display: block;
+  z-index: 1;
+  position: absolute;
+  background-color: red;
+  border-radius: 20px;
+  width: 15%;
+  height: auto;
+  transform: translate(50px,50px);
+*/
+}
+
+.underline{
+  text-decoration: underline;
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+}
+
+.underline:hover{
+  cursor: pointer;
+}
+
+/*************classes to select which part of page they are on, shop, editor, or character select********/
+/*set display to none for it to go away*/
+.displayNone{
+  display: none;
+}
+
+.formWrapper{
+  overflow: hidden;
+}
+
+.offScreen{
+  position: relative;
+  display: block;
+  width: 100%;
+  transition: transform 1s;
+  -webkit-transition: -webkit-transform 1s;
+  transform: translateX(110%);
+  -ms-transform: translateX(110%);
+  -webkit-transform: translateX(110%);
+}
+
+.onScreen{
+    position: relative;
+    display: block;
+    transition: transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+}
+
+input, select{
+  margin-top: 1em;
+}
+
+button{
+  min-width: 90px;
+}
+
+@media (max-width:600px){
+  .hideOnSmall{ display:none;}
+
+
+@media (max-width:400px){
+  .main{
+    width: 88%;
+    float: right;
+  }
+
+  .shopTable{
+    width: 100%;
+  }
+
+}
