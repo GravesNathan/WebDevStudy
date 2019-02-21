@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+/*****************************************************/
+/*Anything below this was part of previous project.  Some of it is still used for background and menu*/
+
 table, th, td{
   border: 1px solid white;
 }
@@ -38,7 +48,7 @@ td{
 
 
 
-.imageScrollBtn{
+/* .imageScrollBtn{
   margin-left: auto;
   margin-right: auto;
   width: 20px;
@@ -46,15 +56,15 @@ td{
   border-radius: 50%;
   color: black;
   background-color: white;
-}
+} */
 
-#pauseResume{
+/* #pauseResume{
   border-radius: 50%;
   width: auto;
   max-width: 100%;
-}
+} */
 
-.images{
+/* .images{
   animation: slideImages 10s linear infinite;
   -webkit-animation: slideImages 10s linear infinite;
 }
@@ -96,7 +106,7 @@ audio{
 .paused{
   animation-play-state: paused;
   -webkit-animation-play-state: paused;
-}
+} */
 /******need to add stuff for buttons still ******/
 
 .main{
@@ -106,13 +116,13 @@ audio{
   margin-right: auto;
 }
 
-video {
+/* video {
   width:100%;
   height:auto;
   max-height: 240px;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 /*
 #smallCanvas{
@@ -135,7 +145,7 @@ video {
   z-index: 1;
   height: 100%;
   transition: transform .5s;
-  -webkit-transition: -webkit-transform .5s
+  -webkit-transition: -webkit-transform .5s;
   transform:translateX(-100%);/*transition left to edge of page*/
   -ms-transform:translateX(-100%);
   -webkit-transform:translateX(-100%);
@@ -180,7 +190,7 @@ video {
   height: auto;
   width: auto;
   position: fixed;
-  top:10;
+  top:10px;
   z-index: 2;
   cursor: pointer;
 }
@@ -316,7 +326,7 @@ body{
   position: relative;
   z-index: 1;
   background-color: black;
-  background-image: url('media/images/Stars.jpg');
+  background-image: url('common/media/images/Stars.jpg');
   background-size: cover;
 }
 
@@ -326,68 +336,6 @@ p, body, div, table, tr, td, form, a{
   font-size: 1em;
 }
 
-.slideWrapper{
-  overflow: hidden;
-}
-
-.slides{
-  background: url('media/images/sliding-background.jpg') repeat-x;
-  height: 440px;/*desired height*/
-  width: 5076px;/*arbitrary high number, divisible by number of seconds in loop (60 here)*/
-  animation: slidesKey 60s linear infinite;
-  -webkit-animation: slidesKey 60s linear infinite;
-}
-/*We can use animation to do anything with transitions, transforms, and all other CSS
-,but allowing us greater control of the timing with keyframes*/
-/*Use animation keyframe to specify the animation for .slides class*/
-@keyframes slidesKey{
-  0%{
-    transform: translate3d(0,0,0);
-  }
-  100%{
-    transform: translate3d(-3720px,0,0);/*I set this to match the image width*/
-  }
-}
-
-@-webkit-keyframes slidesKey{
-  0%{
-    transform: translate3d(0,0,0);
-  }
-  100%{
-    transform: translate3d(-3720px,0,0);/*I set this to match the image width*/
-  }
-}
-/*Adding i symbol &#9432 as before or after in class itemName
-The HTML code for the i is \0024D8 in CSS (ASCII?)*/
-/*
-.itemName::after{
-  content: 	'<span class="infoIcon">"\0024D8"</span>';
-}
-*/
-.infoHover{
-  /*transform:rotate3d(0,1,0,180deg);*/
-/*  display: block;
-  z-index: 1;
-  position: absolute;
-  background-color: blue;
-  border-radius: 20px;
-  width: 15%;
-  height: auto;
-*/
-}
-
-.infoHover:after{
-/*
-  display: block;
-  z-index: 1;
-  position: absolute;
-  background-color: red;
-  border-radius: 20px;
-  width: 15%;
-  height: auto;
-  transform: translate(50px,50px);
-*/
-}
 
 .underline{
   text-decoration: underline;
@@ -398,59 +346,4 @@ The HTML code for the i is \0024D8 in CSS (ASCII?)*/
 
 .underline:hover{
   cursor: pointer;
-}
-
-/*************classes to select which part of page they are on, shop, editor, or character select********/
-/*set display to none for it to go away*/
-.displayNone{
-  display: none;
-}
-
-.formWrapper{
-  overflow: hidden;
-}
-
-.offScreen{
-  position: relative;
-  display: block;
-  width: 100%;
-  transition: transform 1s;
-  -webkit-transition: -webkit-transform 1s;
-  transform: translateX(110%);
-  -ms-transform: translateX(110%);
-  -webkit-transform: translateX(110%);
-}
-
-.onScreen{
-    position: relative;
-    display: block;
-    transition: transform 1s;
-    -webkit-transition: -webkit-transform 1s;
-    transform: translateX(0px);
-    -ms-transform: translateX(0px);
-    -webkit-transform: translateX(0px);
-}
-
-input, select{
-  margin-top: 1em;
-}
-
-button{
-  min-width: 90px;
-}
-
-@media (max-width:600px){
-  .hideOnSmall{ display:none;}
-
-
-@media (max-width:400px){
-  .main{
-    width: 88%;
-    float: right;
-  }
-
-  .shopTable{
-    width: 100%;
-  }
-
 }
