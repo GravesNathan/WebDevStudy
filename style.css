@@ -132,15 +132,13 @@ audio{
 */
 
 #menuBox{
-  width:30%;
-  min-width: 110px;
-  max-width: 200px;
   background-color: black;
+  overflow-y: scroll;
   float: left;
   background-image: linear-gradient(to bottom, #000000 0%, #000066 100%);
   background-repeat: no-repeat;
   position: fixed;
-  top: 40px;
+  top: 0px;
   left: 0px;
   z-index: 1;
   height: 100%;
@@ -164,6 +162,13 @@ audio{
   -ms-transform: translateX(0px);
   -webkit-transform: translateX(0px);
 }
+
+#menuBox ol{
+  tranform: translateX(-2%);
+  -ms-transform: translateX(-2%);
+  -webkit-transform: translateX(-2%);
+}
+
 
 #menu{
   width: 100%;
@@ -272,6 +277,11 @@ body{
   background-size: cover;
 }
 
+/*Ensure background fills page*/
+html{
+  min-height: 100%;
+}
+
 .loading{
   background-color: black;
   z-index: 5;
@@ -331,11 +341,15 @@ body{
 }
 
 /*set default text color for almost everything to white*/
-p, body, div, table, tr, td, form, a{
+p, table, tr, form, a, ol{
   color: white;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
+body{
+  color: white;
+  font-size: 125%;
+}
 
 .underline{
   text-decoration: underline;

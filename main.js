@@ -94,7 +94,6 @@ function includeHTML() {
   }
 }
 
-includeHTML();
 /*Lastly call the code in webpage with this at end of webpage which I essentially did above.
 <script>
 includeHTML();
