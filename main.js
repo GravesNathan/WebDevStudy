@@ -58,7 +58,7 @@ function menuToggle(menuToggle){
 
 
 /*********Navigation JS *********/
-var pagePaths{};
+//var pagePaths{};
 
 function navigate(action){
   var currentPagePath = window.location.pathname;
