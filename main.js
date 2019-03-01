@@ -31,15 +31,6 @@ function storageAvailable(type) {
 //Page On load, for Listeners and re-load of cart.
 function prepPage(){
   loadingStarts();
-  for(i in products){//Populate table
-    document.getElementById("row"+i+"num").innerHTML = products[i].itemNumber;
-    document.getElementById("row"+i+"name").innerHTML = products[i].prodname + '<span onmouseout="displayInfo(this)" onmouseover="displayInfo(this)">&#9432</span>';
-    document.getElementById("row"+i+"cost").innerHTML = products[i].cost;
-    //document.getElementById('ajaxButton').addEventListener('click', getRequest);
-    numOfProducts += 1;
-  }
-    document.getElementById('ajaxButton').addEventListener('click', getRequest);
-    //document.getElementById('apiTest').addEventListener('click', getRequest);
   var menuButton = document.getElementById('menuToggle');
   menuToggle(menuButton);
 }
@@ -63,6 +54,22 @@ function menuToggle(menuToggle){
   var menuBox = document.getElementById('menuBox');
   menuBox.classList.toggle('open');//Add's open class to menuBox
 
+}
+
+
+/*********Navigation JS *********/
+var pagePaths{};
+alert(window.location.pathname);
+function navigate(action){
+  var currentPagePath = window.location.pathname;
+  switch (action) {
+    case 'leftNavButton':
+      switch()
+    case 'rightNavButton':
+
+    default:
+      alert("The navigation action you requested is not supported.");
+  }
 }
 
 
