@@ -13,19 +13,25 @@
 <!--<div w3-include-html="/WebDevTutorial/common/menu.html"></div>-->
 <div w3-include-html="common/menu.html"></div>
 
+<!--
 <div id='fixLocal'>
   <button onclick='fixLocal()'>Fix Local References</button>
 </div>
+-->
 <div id='testing'></div>
 <script>
-  function fixLocal(){
+  //function fixLocal(){
     var myScripts = document.getElementsByTagName('script');
     var myLinks = document.getElementsByTagName('link');
     var w3Includes = document.getElementsByTagName('div');
+    var myATags = document.getElementsByTagName('a');
     for(i=0; i< myScripts.length; i++){
       document.getElementById('testing').innerHTML += myScripts[i].getAttribute('src') + ' ';
     }
-  }
+    //In this script remove the /WebDevTutorial section of src and
+    //href attributes.  Only update attributes when local 
+    //using an if statment.
+  //}
 </script>
 
 <section>
