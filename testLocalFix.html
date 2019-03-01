@@ -33,7 +33,9 @@ Plan.  1. check if URL contains github.io (or if it contains a localhost type th
 2.  If it matches such that it's a local install, take the script, link, a, and w3 attributes to store
 3.  Update those elements to have an attribute without /MyProjectName so it uses only the root locally.
 4.  My concern is if refreshing the page is necessary.  If that won't work then need to remove it from the DOM
-  and then add a new piece of DOM that contains the correct stuff.-->
+  and then add a new piece of DOM that contains the correct stuff.
+
+(Can remove the button and have it run automatically if this works so it's consistent)-->
 <div id='fixLocal'>
   <button onclick='fixLocal()'>Fix Local References</button>
 </div>
