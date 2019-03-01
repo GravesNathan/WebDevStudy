@@ -59,9 +59,10 @@ function menuToggle(menuToggle){
 
 /*********Navigation JS *********/
 var pagePaths{};
-alert(window.location.pathname);
+
 function navigate(action){
   var currentPagePath = window.location.pathname;
+  alert(window.location.pathname);
   switch (action) {
     case 'leftNavButton':
       switch()
