@@ -60,6 +60,7 @@ function menuToggle(menuToggle){
 /*********Navigation JS *********/
 //var pagePaths{};
 
+/*
 function navigate(action){
   var currentPagePath = window.location.pathname;
   alert(window.location.pathname);
@@ -72,7 +73,7 @@ function navigate(action){
       alert("The navigation action you requested is not supported.");
   }
 }
-
+*/
 
 function includeHTML() {
   var z, i, elmnt, file, xhttp;

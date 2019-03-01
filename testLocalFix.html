@@ -9,7 +9,22 @@
 </head>
 <body>
 <div w3-include-html="/WebDevTutorial/common/menu.html"></div>
+<div id='fixLocal'>
+  <button onclick='fixLocal()'>Fix Local References</button>
+</div>
+<script>
+  function fixLocal(){
+    var myScripts = document.getElementsByTagName('script');
+    var myLinks = document.getElementsByTagName('link');
+    var w3Includes = document.getElementsByTagName('div');
+    foreach(script in MyScripts){
+      document.getElementById(testing).innerHTML += script;
+    }
+  }
+</script>
+<div id='testing'></div>
 <section>
+
   <h1>Welcome to React!</h1>
   <p>
     In this course we'll go over the fundamentals of the React (or ReactJs) library.  It is expected that anyone taking this course already
@@ -22,6 +37,7 @@
   </p>
 </section>
 <div w3-include-html="/WebDevTutorial/common/navigation.html"></div>
+
 </body>
 <script>
 includeHTML();
