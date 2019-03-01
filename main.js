@@ -60,20 +60,20 @@ function menuToggle(menuToggle){
 /*********Navigation JS *********/
 //var pagePaths{};
 
-/*
+
 function navigate(action){
   var currentPagePath = window.location.pathname;
   alert(window.location.pathname);
-  switch (action) {
-    case 'leftNavButton':
-      switch()
-    case 'rightNavButton':
-
-    default:
-      alert("The navigation action you requested is not supported.");
-  }
+  // switch (action) {
+  //   case 'leftNavButton':
+  //     switch()
+  //   case 'rightNavButton':
+  //
+  //   default:
+  //     alert("The navigation action you requested is not supported.");
+  //}
 }
-*/
+
 
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
