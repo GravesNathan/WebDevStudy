@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--<link rel="stylesheet" type="text/css" title="Cool stylesheet" href="/WebDevTutorial/style.css">-->
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="/style.css">
 <!--  <script src="/WebDevTutorial/main.js" type="text/javascript"></script>-->
-  <script src="main.js" type="text/javascript"></script>
+  <script src="/main.js" type="text/javascript"></script>
 </head>
 <body>
 <!--<div w3-include-html="/WebDevTutorial/common/menu.html"></div>-->
-<div w3-include-html="common/menu.html"></div>
+<div w3-include-html="/common/menu.html"></div>
 <section>
 
   <h1>Welcome to React!</h1>
@@ -26,7 +26,7 @@
   </p>
 </section>
 <!--<div w3-include-html="/WebDevTutorial/common/navigation.html"></div>-->
-<div w3-include-html="common/navigation.html"></div>
+<div w3-include-html="/common/navigation.html"></div>
 
 <!--  ********************Place script at end of body
 Plan.  1. check if URL contains github.io (or if it contains a localhost type thing if the former idea doesn't work)
@@ -36,25 +36,29 @@ Plan.  1. check if URL contains github.io (or if it contains a localhost type th
   and then add a new piece of DOM that contains the correct stuff.
 
 (Can remove the button and have it run automatically if this works so it's consistent)-->
-<!--
+
 <div id='fixLocal'>
   <button onclick='fixLocal()'>Fix Local References</button>
 </div>
--->
+
 <div id='testing'></div>
 <script>
-  //function fixLocal(){
+  function fixLocal(){
+    var myProjectName = '/WebDevTutorial';
+    var currentUrl = window.location.href;
     var myScripts = document.getElementsByTagName('script');
     var myLinks = document.getElementsByTagName('link');
     var w3Includes = document.getElementsByTagName('div');
     var myATags = document.getElementsByTagName('a');
     for(i=0; i< myScripts.length; i++){
-      document.getElementById('testing').innerHTML += myScripts[i].getAttribute('src') + ' ';
+      document.getElementById('testing').innerHTML += myScripts[i].src + ' ';
     }
+    document.getElementById('testing').innerHTML += currentUrl + ' ';
+
     //In this script remove the /WebDevTutorial section of src and
     //href attributes.  Only update attributes when local
     //using an if statment.
-  //}
+  }
 </script>
 
 </body>
