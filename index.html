@@ -7,9 +7,9 @@
   <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="/WebDevTutorial/style.css">
   <script src="/WebDevTutorial/main.js" type="text/javascript"></script>
 </head>
-<body>
+<body onload='prepPage()'>
 <div w3-include-html="/WebDevTutorial/common/menu.html"></div>
-<div w3-include-html="/WebDevTutorial/common/navigation.html"></div>
+
 <section>
   <h1>Welcome to React!</h1>
   <p>
@@ -21,8 +21,8 @@
     Throughout this course you may use the menu navigation on the top left to browse between section.  After the content is created I intend
     to create some sort of bookmark that you'll be able to use to resume from where you left off.
   </p>
+
 </section>
-<div w3-include-html="/WebDevTutorial/common/navigation.html"></div>
 </body>
 <script>
 includeHTML();
