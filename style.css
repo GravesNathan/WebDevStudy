@@ -116,6 +116,11 @@ audio{
   margin-right: auto;
 }
 
+#rightNav{
+  position: relative;
+  float: right;
+}
+
 /* video {
   width:100%;
   height:auto;
