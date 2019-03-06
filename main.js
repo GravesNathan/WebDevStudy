@@ -78,12 +78,12 @@ function menuToggle(menuToggle){
     //navBar.getElementById.innerHTML('test');
   // var leftNav = navBar.appendChild(document.createElement('A'));
   // leftNav.appendChild('<');
-  // leftNav.setAttribute('class','navLink');
+  // leftNav.setAttribute('class','buttonLink');
   // var rightNav = navBar.appendChild(document.createElement('A'));
   // rightNav.appendChild('<');
-  // rightNav.setAttribute('class','navLink');
+  // rightNav.setAttribute('class','buttonLink');
 
-  var reactLessonIndexes = new Array('index.html','r1-1.html','r1-2.html','r1-3.html','r1-4.html','r1-5.html','r1-6.html','r2-0.html','r2-1.html','r2-2.html','r2-3.html','r2-4.html','r2-5.html',
+  var reactLessonIndexes = new Array('index.html','r1-0.html','r1-1.html','r1-2.html','r1-3.html','r1-4.html','r1-5.html','r1-6.html','r2-0.html','r2-1.html','r2-2.html','r2-3.html','r2-4.html','r2-5.html',
   'r3-0.html','r3-1.html','r3-2.html','r3-3.html','r3-4.html','r3-5.html','r3-6.html','r3-7.html','r3-8.html','r3-9.html','r3-10.html','r3-11.html','r4-0.html','r4-1.html','r4-2.html','r4-3.html','r5-0.html','r6-0.html');
   var reactPath = '/WebDevTutorial/view/react/';
   var reactLessonPaths = new Array();
@@ -94,20 +94,20 @@ function menuToggle(menuToggle){
   //compare path and create href attribute in link buttons
   //case for react/index.html page
   if ((reactLessonPaths[0] == currentPagePath) ||  ('/WebDevTutorial/view/react/' == currentPagePath) ) {
-    navBar1.innerHTML = "<a class='navLink' id='leftNav' href='"+reactLessonPaths[1]+"'>Next</a>";
-    navBar2.innerHTML = "<a class='navLink' id='leftNav' href='"+reactLessonPaths[1]+"'>Next</a>";
+    navBar1.innerHTML = "<a class='buttonLink' id='rightNav' href='"+reactLessonPaths[1]+"'>Next</a>";
+    navBar2.innerHTML = "<a class='buttonLink' id='rightNav' href='"+reactLessonPaths[1]+"'>Next</a>";
   //case for last page of lesson
   } else {
     for (i=1;i<reactLessonPaths.length;i++){//start at 1, that case is above
       if ( '/WebDevTutorial/view/react/r6-0.html' == currentPagePath){
-        navBar1.innerHTML = "<a class='navLink' id='leftNav' href='"+reactLessonPaths[i-1]+"'>Previous</a>";
-        navBar2.innerHTML = "<a class='navLink' id='leftNav' href='"+reactLessonPaths[i-1]+"'>Previous</a>"
+        navBar1.innerHTML = "<a class='buttonLink' id='leftNav' href='"+reactLessonPaths[i-1]+"'>Previous</a>";
+        navBar2.innerHTML = "<a class='buttonLink' id='leftNav' href='"+reactLessonPaths[i-1]+"'>Previous</a>"
         //case for most pages
       } else if ( (reactLessonPaths[i] == currentPagePath) ){//Nav links for all but index pages
-        navBar1.innerHTML = "<a class='navLink' id='leftNav' href='"+reactLessonPaths[i-1]+"'>Previous</a>";
-        navBar1.innerHTML += "<a class='navLink' id='rightNav' href='"+reactLessonPaths[i+1]+"'>Next</a>";
-        navBar2.innerHTML = "<a class='navLink' id='leftNav' href='"+reactLessonPaths[i-1]+"'>Previous</a>";
-        navBar2.innerHTML += "<a class='navLink' id='rightNav' href='"+reactLessonPaths[i+1]+"'>Next</a>";
+        navBar1.innerHTML = "<a class='buttonLink' id='leftNav' href='"+reactLessonPaths[i-1]+"'>Previous</a>";
+        navBar1.innerHTML += "<a class='buttonLink' id='rightNav' href='"+reactLessonPaths[i+1]+"'>Next</a>";
+        navBar2.innerHTML = "<a class='buttonLink' id='leftNav' href='"+reactLessonPaths[i-1]+"'>Previous</a>";
+        navBar2.innerHTML += "<a class='buttonLink' id='rightNav' href='"+reactLessonPaths[i+1]+"'>Next</a>";
         break;
       }
     }
