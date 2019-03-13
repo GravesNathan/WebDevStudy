@@ -11,7 +11,34 @@
 <div w3-include-html="/WebDevTutorial/common/menu.html"></div>
 <div class='NavBar' id='navBar1'></div>
 <section>
-
+  <h1>Section 1: React Introduction</h1>
+  <h2>Why use React?</h2>
+  <p>
+    Before we get too deep let's talk about why this library has become popular.
+  </p>
+  <ol>
+    <li>
+      Faster Loading: <br />The normal DOM can be hard to work with.  Most JS frameworks (or libraries) work with the DOM.  The problem
+      with using the DOM is that one small change (such as adding an item to a list) require the whole DOM to be re-loaded with the desired change.
+      <br /><br />The Virtual DOM loads much faster than the real DOM and what React specializes in is the method in which
+      it utilized the virtual DOM.  Simply put, when a change is requested the entire virutal DOM is updated, the virutal DOM is then compared to
+      what it looked like before the change, and (the best part) ONLY the CHANGED objects are applied to the real DOM!  This can dramatically reduce
+      the loading time of websites!  See this page to learn more
+      <a href='https://www.codecademy.com/articles/react-virtual-dom' title='About the Virtual DOM'>about the Virtual DOM</a>.
+    </li>
+    <br />
+    <li>
+      Dynamic Webpages/Faster Development: <br />React uses a Components based structure (more on Components later).  For now what you should know is Components
+      are small pieces of code that are easy to update and maintain.  These components are extremely modular, greatly reducing the amount of time produce duplicate
+      code across websites.
+    </li>
+    <br />
+    <li>
+      Other Benefits:<br />There other reasons you might consider using React.  Here are two links you might look at if you're interested.
+      <br /><a href='https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247' title='7 reasons to use react'>7 Reasons to Use React</a><br />
+      <br /><a href='https://medium.freecodecamp.org/yes-react-is-taking-over-front-end-development-the-question-is-why-40837af8ab76' title='React is taking over front-end development'>React is taking over front-end development</a>
+    </li>
+  </ol>
 </section>
 <div class='NavBar' id='navBar2'></div>
 </body>
