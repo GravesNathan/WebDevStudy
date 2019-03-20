@@ -11,7 +11,37 @@
 <div w3-include-html="/WebDevTutorial/common/menu.html"></div>
 <div class='NavBar' id='navBar1'></div>
 <section>
+  <h1>Section 1: React Introduction</h1>
+  <h2>import, React and ReactDOM</h2>
 
+  <p>
+    To start off we'll take a look at the index.js file located in our myapp -> src directory.
+    You should see something like this.
+  </p>
+  <img class='tutorialImg' src='/WebDevTutorial/common/media/images/r1-4-indexjs.png' alt='index.js Image' /><br />
+  <br />
+  <p>
+    Let's go over the first few lines in detail.
+  </p>
+  <h3>import and from</h3>
+  <p>
+    "import" is an ES6 function that allows us to bring code from other modules into our current scope.
+    It is often used in conjunction with the "from" command which indicates where to look for the module.
+    This works essentially the same with Reactjs, except that we can also import other Reactjs
+    component which we'll get into later.
+  </p>
+  <h3>import React and ReactDOM</h3>
+  <p>
+    All you really need to know about these lines is we are importing a module (or component) named "React" from
+    a location of "react".  The same is true of ReactDOM from react-dom.  import React is necessary for
+    the Reactjs to be understood by the application.  import ReactDOM is necessary to view (or render) React content
+    on our page.  Don't worry too much about understanding the details at this point.
+  </p>
+  <p>
+    For more information about importing, exporting, and modules you can refence this
+    <a href='https://medium.com/@trekinbami/a-not-so-in-depth-explanation-of-es6-modules-import-and-export-13a80300f2f0'
+    alt='Medium.com ES6 modules'>link</a>.
+  </p>
 </section>
 <div class='NavBar' id='navBar2'></div>
 </body>

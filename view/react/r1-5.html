@@ -11,7 +11,60 @@
 <div w3-include-html="/WebDevTutorial/common/menu.html"></div>
 <div class='NavBar' id='navBar1'></div>
 <section>
+  <h1>Section 1: React Introduction</h1>
+  <h2>ReactDOM.render()</h2>
 
+  <h3>Syntax</h3>
+  <i>ReactDOM.render(WhatToRender, WhereToRender);</i>
+  <h3>Explanation</h3>
+  <p>
+    As I mentioned in the last lesson ReadDOM is necessary to view (or render) our app on the screen.
+    This is largely because of the render() function that is part of ReactDOM.  Simply put, if we
+    want something to show in the screen using React we need to "render" it.  Let's walk through
+    an example.
+  </p>
+  <h3>Practice</h3>
+    <ol>
+      <li>
+        Go back to our index.js file from earlier.  You should see one line that says.<br /><br />
+        <i>ReactDOM.render(&ltApp /&gt, document.getElementById('root'));</i><br /><br />
+        This line says to render a Component named "App" to the webpage where it finds the id "root".
+      </li><br />
+      <li>
+        Comment out this line.  Then copy/paste or type in the following in the line below it.<br /><br />
+        <i>ReactDOM.render('hello', document.getElementById('root'));</i><br /><br />
+        You should see your local page refresh automatically, if not refresh it manually.  If everything worked
+        you should see a blank page with the word 'hello' on the top left of the window.
+      </li><br />
+      <li>
+        Let's take it a step further and render a JavaScript variable.  I'll adjust my code as follows:
+        <br /><br />
+        <i>var sum = 5+9+31;<br />
+        ReactDOM.render(sum, document.getElementById('root'));</i><br /><br />
+
+        Refresh your page browser if necessary and you should see a
+        '45' on the top left of my browser window.
+      </li><br />
+      <li>
+        Last, but not least, let's render an HTML element.
+        <br /><br />
+        <i>const e = React.createElement('strong',null,'Hello There');;
+        ReactDOM.render(e, document.getElementById('root'));</i>
+        <br /><br />
+        SURPRISE!  Bet you didn't expect that one.  Since we're in a javascript file
+        we can't simply type in &ltstrong&gt or any HTML tag.  This forces us to use a
+        React <i>createElement</i> function to render an HTML element.
+        More about the createElement() function can be found on
+        <a href='https://reactjs.org/docs/react-api.html#createelement'
+        alt='reactjs.org create element'>reactjs.org</a>
+      </li>
+    </ol><br />
+    <p>
+      Before moving on to the quiz, I suggest taking some time to play with the ReactDOM.render() function.
+      We won't worry too much about <i>React.creteElement()</i> at this point, so long as you are
+      aware that we cannot display HTML tags without it.
+    </p>
+    <br />
 </section>
 <div class='NavBar' id='navBar2'></div>
 </body>

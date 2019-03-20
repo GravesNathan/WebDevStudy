@@ -375,3 +375,12 @@ body{
 .underline:hover{
   cursor: pointer;
 }
+
+/*   **** WebDevTutorial Adjustments ***** */
+.tutorialImg{
+  width: 90%;
+  height: auto;
+}
+
+/*I need to make the font smaller, at least for small screens if not all
+The order list are sometimes cutting off on small screens*/
