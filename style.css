@@ -346,7 +346,7 @@ html{
 }
 
 /*set default text color for almost everything to white*/
-p, table, tr, form, a, ol{
+p, table, tr, form, a, ol, button{
   color: white;
   font-size: 1.1em;
 }
@@ -380,6 +380,11 @@ body{
 .tutorialImg{
   width: 90%;
   height: auto;
+}
+
+ .center{
+  display: flex;
+  align-self: center;
 }
 
 /*I need to make the font smaller, at least for small screens if not all

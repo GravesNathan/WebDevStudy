@@ -11,7 +11,97 @@
 <div w3-include-html="/WebDevTutorial/common/menu.html"></div>
 <div class='NavBar' id='navBar1'></div>
 <section>
+  <h1>Section 1: React Introduction</h1>
+  <h2>React Introduction Quiz</h2>
+  <!--
+  Questions ol
 
+  Answers Ol
+  Set answers display to none unless show button is clicked
+  -->
+  <ol class='question-ol'>
+    <li class='question-li'>
+      Which statements below are true? (Select all that apply)
+      <ol type='a'>
+        <li>
+          ReactJs is a foundation for all web development.
+        </li>
+        <li>
+          ReactJS was initially developed by Facebook engineers.
+        </li>
+        <li>
+          ReactJS acts as a model layer of web development when implementing MVC.
+        </li>
+        <li>
+          ReactJS is a powerful front-end development library based on JavaScript.
+        </li>
+      </ol>
+    </li><br />
+    <li class='question-li'>
+      Select which statements below are reasons why one might consider using ReactJS?
+      <ol type='a'>
+        <li>
+          ReactJs can potentially make the loading of websites faster for end users.
+        </li>
+        <li>
+          ReactJs improved the use of the virtual DOM by applying only items that were changed
+          to the real DOM.
+        </li>
+        <li>
+          ReactJS is modular.  That is one can import and export chuncks of code to reuse them
+          elsewhere.
+        </li>
+        <li>
+          Effectively used, front-end web development can be done at a faster pace than using
+          traditional HTML.
+        </li>
+      </ol>
+    </li><br />
+    <li>
+      Based on this tutorial, what command is used to start a react app?
+      <input type='text' placeholder='Type command here'/>
+    </li><br />
+    <li>
+      Which ReactDOM function is used to update the screen to display new or updated items?
+      <input type='text' placeholder='Type function name here'/>
+    </li><br />
+    <li>
+      Type in a React command to update the view with the word 'Awesome!' and display it
+      to the element 'root'.
+      <input type='text' placeholder="Type command here" />
+    </li><br />
+    <li>
+      Bonus Question: <br />
+      Fill in the blanks to complete a command that displays a 'strong' tag with the words
+      "I am strong".<br /><br />
+      const e = React.<input type='text' />('<input type='text' />',null,'');<br />
+      ReactDOM.<input type='text' />(e, document.getElementById('root'));
+    </li>
+  </ol>
+
+  <button class='buttonLink center' onclick='showAnswers()'>Show Answers</button>
+  <hr />
+  <ol class='answer-ol noDisplay'>
+    <li class ='answer-li noDisplay'>
+      b, d
+    </li>
+    <li>
+      a, b, c, d
+    </li>
+    <li>
+      npm start
+    </li>
+    <li>
+      render()
+    </li>
+    <li>
+      ReactDOM.render('Awesome!', document.getElementById('root'));
+    </li>
+    <li>
+      const e = React.createElement('strong',null,'I am strong');<br />
+      ReactDOM.render(e, document.getElementById('root'));
+    </li>
+  </ol>
 </section>
 <div class='NavBar' id='navBar2'></div>
 </body>
