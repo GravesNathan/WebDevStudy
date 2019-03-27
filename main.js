@@ -114,6 +114,23 @@ function menuToggle(menuToggle){
   }
 }
 
+
+/*********Show Answer Button *********/
+function showAnswers(){
+  var answerBtn = document.getElementById('answerButton');
+  var answerBtnText = answerBtn.innerHTML;
+  var answerList = document.getElementById('answersList');
+  if (answerBtnText == 'Show Answer'){
+    document.getElementById('answerButton').innerHTML = 'Hide Answers';
+    answerList.classList.toggle('noDisplay');
+  } else {
+    document.getElementById('answerButton').innerHTML = 'Show Answers';
+    answerList.classList.toggle('noDisplay');
+  }
+}
+
+/**************incude HTML w3Schools***********/
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/

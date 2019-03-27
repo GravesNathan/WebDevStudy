@@ -74,32 +74,34 @@
       Bonus Question: <br />
       Fill in the blanks to complete a command that displays a 'strong' tag with the words
       "I am strong".<br /><br />
-      const e = React.<input type='text' />('<input type='text' />',null,'');<br />
+      const e = React.<input type='text' />(<input type='text' />,null,<input type='text' />);<br />
       ReactDOM.<input type='text' />(e, document.getElementById('root'));
     </li>
   </ol>
 
-  <button class='buttonLink center' onclick='showAnswers()'>Show Answers</button>
+  <button id='answerButton' class='buttonLink center' onclick='showAnswers()'>Show Answers</button>
   <hr />
-  <ol class='answer-ol noDisplay'>
-    <li class ='answer-li noDisplay'>
+  <ol id='answersList' class='answer-ol noDisplay'>
+    <li class ='answer-li'>
       b, d
     </li>
-    <li>
+    <li class ='answer-li'>
       a, b, c, d
     </li>
-    <li>
+    <li class ='answer-li'>
       npm start
     </li>
-    <li>
+    <li class ='answer-li'>
       render()
     </li>
-    <li>
+    <li class ='answer-li'>
       ReactDOM.render('Awesome!', document.getElementById('root'));
     </li>
-    <li>
-      const e = React.createElement('strong',null,'I am strong');<br />
-      ReactDOM.render(e, document.getElementById('root'));
+    <li class ='answer-li'>
+      createElement<br />
+      'strong'<br />
+      'I am strong'<br />
+      render
     </li>
   </ol>
 </section>
