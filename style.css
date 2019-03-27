@@ -48,93 +48,21 @@ td{
 
 
 
-/* .imageScrollBtn{
-  margin-left: auto;
-  margin-right: auto;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  color: black;
-  background-color: white;
-} */
-
-/* #pauseResume{
-  border-radius: 50%;
-  width: auto;
-  max-width: 100%;
-} */
-
-/* .images{
-  animation: slideImages 10s linear infinite;
-  -webkit-animation: slideImages 10s linear infinite;
-}
-
-audio{
-  max-width: 100%;
-}
-
-@keyframes slideImages{
-  5%{
-    transform: translate3d(0,0,0);
-  }
-  55%{
-    transform: translate3d(-100%,0,0);
-  }
-  65%{
-    transform: translate3d(-100%,0,0);
-  }
-  95%{
-    transform: translate3d(0,0,0);
-  }
-}
-
-@-webkit-keyframes slideImages{
-  5%{
-    transform: translate3d(0,0,0);
-  }
-  55%{
-    transform: translate3d(-100%,0,0);
-  }
-  65%{
-    transform: translate3d(-100%,0,0);
-  }
-  95%{
-    transform: translate3d(0,0,0);
-  }
-}
-
-.paused{
-  animation-play-state: paused;
-  -webkit-animation-play-state: paused;
-} */
 /******need to add stuff for buttons still ******/
 
-.main{
+/* .main{
   width: 80%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 #rightNav{
   position: relative;
   float: right;
 }
 
-/* video {
-  width:100%;
-  height:auto;
-  max-height: 240px;
-  margin-left: auto;
-  margin-right: auto;
-} */
 
-/*
-#smallCanvas{
-  top:0;
-  float:right;
-}
-*/
 
 #menuBox{
   background-color: black;
@@ -348,7 +276,7 @@ html{
 /*set default text color for almost everything to white*/
 p, table, tr, form, a, ol, button{
   color: white;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .buttonLink{
@@ -391,9 +319,9 @@ body{
   display: none;
 }
 
-.blockDisplay{
-  display: block;
+.tutorialLists{
+  position: relative;
+  left: -5%;
 }
-
 /*I need to make the font smaller, at least for small screens if not all
 The order list are sometimes cutting off on small screens*/
