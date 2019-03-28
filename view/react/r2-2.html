@@ -5,14 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="/WebDevTutorial/style.css">
   <script src="/WebDevTutorial/main.js" type="text/javascript"></script>
-<title>Template Page</title>
+<title>Rendering JSX</title>
 </head>
 <body onload='prepPage()'>
 <div w3-include-html="/WebDevTutorial/common/menu.html"></div>
 <div class='NavBar' id='navBar1'></div>
 <section>
-
-</section>
+  <h1>JSX Overview</h1>
+  <h2>JSX Elements, Attributes, and Rules</h2>
+  <p>
+    We'll cover a lot of JSX groundwork in this lesson so be sure to take your time and pay attention.
+  </p>
+  <h3>JSX Elements</h3>
+  <p>
+    JSX Elements are the most basic piece of JSX.  Generally they look exactly, or almost exactly, like
+    their HTML element counterparts.  Check out this example &lt;h1&gt; JSX element example.
+  </p>
+  <i>&lt;h1&gt;Hello world&lt;/h1&gt;</i>
+  <p>
+    See any difference between this h1 JSX element and an h1 element in HTML?  No...?
+    Well good, because you shouldn't.  In fact the only noticible difference between
+    JSX elements and their corresponding HTML elements is <strong>JSX Elements are found
+    in JavaScript files!</strong>
+  </p>
+  <p>
+    You should also know that JSX Elements can be used anywhere that traditional JavaScript can be used.
+    For example, we can save JSX Elements to variables or constants in JavaScript.
+  </p>
+  <i>var navBar = &lt;nav&gt;I am a nav bar&lt;/nav&gt;;</i>
+  <p>
+    
+  </p>
+</section>  <br />
 <div class='NavBar' id='navBar2'></div>
 </body>
 <script>

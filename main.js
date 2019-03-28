@@ -83,7 +83,7 @@ function menuToggle(menuToggle){
   // rightNav.appendChild('<');
   // rightNav.setAttribute('class','buttonLink');
 
-  var reactLessonIndexes = new Array('index.html','r1-0.html','r1-1.html','r1-2.html','r1-3.html','r1-4.html','r1-5.html','r1-6.html','r2-0.html','r2-1.html','r2-2.html','r2-3.html','r2-4.html','r2-5.html',
+  var reactLessonIndexes = new Array('index.html','r1-0.html','r1-1.html','r1-2.html','r1-3.html','r1-4.html','r1-5.html','r1-6.html','r2-0.html','r2-1.html','r2-2.html','r2-3.html','r2-4.html','r2-5.html','r2-6.html',
   'r3-0.html','r3-1.html','r3-2.html','r3-3.html','r3-4.html','r3-5.html','r3-6.html','r3-7.html','r3-8.html','r3-9.html','r3-10.html','r3-11.html','r4-0.html','r4-1.html','r4-2.html','r4-3.html','r5-0.html','r6-0.html');
   var reactPath = '/WebDevTutorial/view/react/';
   var reactLessonPaths = new Array();
