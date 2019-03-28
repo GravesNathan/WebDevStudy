@@ -321,7 +321,7 @@ body{
 
 .tutorialLists{
   position: relative;
-  left: -5%;
+  padding-left: 20px;
 }
 /*I need to make the font smaller, at least for small screens if not all
 The order list are sometimes cutting off on small screens*/
