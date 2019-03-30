@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="/WebDevTutorial/style.css">
   <script src="/WebDevTutorial/main.js" type="text/javascript"></script>
-<title>Template Page</title>
+<title>React Quiz 1</title>
 </head>
 <body onload='prepPage()'>
 <div w3-include-html="/WebDevTutorial/common/menu.html"></div>
@@ -26,13 +26,13 @@
         <li>
           ReactJs is a foundation for all web development.
         </li>
-        <li>
+        <li class='mcAnswer'>
           ReactJS was initially developed by Facebook engineers.
         </li>
         <li>
           ReactJS acts as a model layer of web development when implementing MVC.
         </li>
-        <li>
+        <li class='mcAnswer'>
           ReactJS is a powerful front-end development library based on JavaScript.
         </li>
       </ol>
@@ -40,18 +40,18 @@
     <li class='question-li'>
       Select which statements below are reasons why one might consider using ReactJS?
       <ol type='a'>
-        <li>
+        <li class='mcAnswer'>
           ReactJs can potentially make the loading of websites faster for end users.
         </li>
-        <li>
+        <li class='mcAnswer'>
           ReactJs improved the use of the virtual DOM by applying only items that were changed
           to the real DOM.
         </li>
-        <li>
+        <li class='mcAnswer'>
           ReactJS is modular.  That is one can import and export chuncks of code to reuse them
           elsewhere.
         </li>
-        <li>
+        <li class='mcAnswer'>
           Effectively used, front-end web development can be done at a faster pace than using
           traditional HTML.
         </li>
@@ -60,15 +60,24 @@
     <li>
       Based on this tutorial, what command is used to start a react app?
       <input type='text' placeholder='Type command here'/>
+      <p class='fibAnswer noDisplay'>
+        Answer: npm start
+      </p>
     </li><br />
     <li>
       Which ReactDOM function is used to update the screen to display new or updated items?
       <input type='text' placeholder='Type function name here'/>
+      <p class='fibAnswer noDisplay'>
+        Answer: render()
+      </p>
     </li><br />
     <li>
       Type in a React command to update the view with the word 'Awesome!' and display it
       to the element 'root'.
       <input type='text' placeholder="Type command here" />
+      <p class='fibAnswer noDisplay'>
+        Answer: ReactDOM.render('Awesome!', document.getElementById( 'root' ));
+      </p>
     </li><br />
     <li>
       Bonus Question: <br />
@@ -76,34 +85,16 @@
       "I am strong".<br /><br />
       const e = React.<input type='text' />(<input type='text' />,null,<input type='text' />);<br />
       ReactDOM.<input type='text' />(e, document.getElementById( 'root' ));
+      <p class='fibAnswer noDisplay'>
+        Answers:&nbsp;&nbsp; createElement, &nbsp;&nbsp;&nbsp; 'strong', &nbsp;&nbsp;&nbsp; 'I am strong', &nbsp;&nbsp;&nbsp; render
+      </p>
     </li>
   </ol>
 
   <button id='answerButton' class='buttonLink center' onclick='showAnswers()'>Show Answers</button>
-  <hr />
-  <ol id='answersList' class='tutorialLists noDisplay'>
-    <li class ='answer-li'>
-      b, d
-    </li>
-    <li class ='answer-li'>
-      a, b, c, d
-    </li>
-    <li class ='answer-li'>
-      npm start
-    </li>
-    <li class ='answer-li'>
-      render()
-    </li>
-    <li class ='answer-li'>
-      ReactDOM.render('Awesome!', document.getElementById( 'root' ));
-    </li>
-    <li class ='answer-li'>
-      createElement<br />
-      'strong'<br />
-      'I am strong'<br />
-      render
-    </li>
-  </ol>
+  <p class='colorText center subscript'>
+    Answers will show in yellow.
+  </p>
 </section>
 <div class='NavBar' id='navBar2'></div>
 </body>

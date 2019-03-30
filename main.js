@@ -117,16 +117,28 @@ function menuToggle(menuToggle){
 
 /*********Show Answer Button *********/
 function showAnswers(){
+  //update answer button
   var answerBtn = document.getElementById('answerButton');
   var answerBtnText = answerBtn.innerHTML;
-  var answerList = document.getElementById('answersList');
-  if (answerBtnText == 'Show Answer'){
+  if (answerBtnText == 'Show Answers'){
     document.getElementById('answerButton').innerHTML = 'Hide Answers';
-    answerList.classList.toggle('noDisplay');
   } else {
     document.getElementById('answerButton').innerHTML = 'Show Answers';
-    answerList.classList.toggle('noDisplay');
   }
+  //the getElementsByClassName returns an HMTL Collection so we can't simply iterate through
+  //it with a basic foreach.  Hence the Array.prototype.forEach.call used below
+
+  //highlight multiple choice answers
+  var mcAnswers = document.getElementsByClassName('mcAnswer');
+  var fibAnswers = document.getElementsByClassName('fibAnswer');
+  Array.prototype.forEach.call(mcAnswers, function(mcAnswer){
+    mcAnswer.classList.toggle('colorText');
+  });
+  //show answers for fill in blank.
+  Array.prototype.forEach.call(fibAnswers, function(fibAnswer){
+    fibAnswer.classList.toggle('colorText');
+    fibAnswer.classList.toggle('noDisplay');
+  });
 }
 
 /**************incude HTML w3Schools***********/

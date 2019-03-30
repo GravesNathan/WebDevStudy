@@ -274,7 +274,7 @@ html{
 }
 
 /*set default text color for almost everything to white*/
-p, table, tr, form, a, ol, button{
+p, table, tr, form, a, ol, button, span{
   color: white;
   font-size: 1em;
 }
@@ -313,15 +313,26 @@ body{
  .center{
   display: flex;
   align-self: center;
-}
+  justify-content: center;
 
-.noDisplay{
-  display: none;
 }
 
 .tutorialLists{
   position: relative;
   padding-left: 20px;
 }
-/*I need to make the font smaller, at least for small screens if not all
-The order list are sometimes cutting off on small screens*/
+
+/*Quiz related answer display CSS*/
+.noDisplay{
+  display: none;
+}
+
+.colorText{
+  color: yellow;
+}
+
+.subscript{
+  font-size: .8em;
+}
+/* used class='mcAnswer' for multiple choice answers
+Used fibAnswer to have a paragraph with correct answer shown by toggle visibility.*/
