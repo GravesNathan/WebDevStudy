@@ -334,5 +334,14 @@ body{
 .subscript{
   font-size: .8em;
 }
+
+.inline{
+  display: inline;
+}
+
+input{
+  margin-top: 1em;
+}
+
 /* used class='mcAnswer' for multiple choice answers
 Used fibAnswer to have a paragraph with correct answer shown by toggle visibility.*/
