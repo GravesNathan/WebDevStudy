@@ -30,12 +30,90 @@
   </p>
   <p>
     You should also know that JSX Elements can be used anywhere that traditional JavaScript can be used.
-    For example, we can save JSX Elements to variables or constants in JavaScript.
+    For example, we can save JSX Elements to variables or constants in JavaScript (shown below).
   </p>
   <i>var navBar = &lt;nav&gt;I am a nav bar&lt;/nav&gt;;</i>
+
+  <h3>JSX Attributes</h3>
   <p>
-    
+    JSX Attributes consist of name, value pairs in the format <i>name="value"</i> used in the opening tag of the JSX Element.  This
+    is essentially the same as HTML attributes.  Here are some examples.
   </p>
+  <i>&lt;a href="example.com"&gt;&lt;h1&gt;Go To Example.com&lt;/h1&gt;&lt;/a&gt;;</i>
+  <br /><br />
+  <i>var myName = &lt; strong &gt; My name is myname! &lt; strong /&gt;;</i>
+
+  <h3>Rules for using JSX</h3>
+  <p>
+    When using JSX there are a few rules that distinguish it from HTML that you should be familiar with.
+  </p>
+  <ol class='tutorialLists'>
+    <li>
+      Nesting JSX:<br />
+        JSX elements can be wrapped in each other just just like in HTML.<br />
+        <br />
+        <i>&lt;a href="example.com"&gt;&lt;h1&gt;Go To Example.com&lt;/h1&gt;&lt;/a&gt;</i>;
+        <br /><br />
+        Please note that the above two examples are both actually on 1 line each.  It might appear to be multiple
+        lines depending on your device but there are not any actual line breaks.  This single line pieces of code can be hard to follow,
+        but otherwise works.
+    </li><br />
+    <li>
+      Multi-Line JSX:<br />
+      In order to use multiple lines for a JSX expression we need to encapsulate it in parinthesis.<br /><br />
+      <i>(<br />
+        &nbsp;&nbsp; &lt;a href="example.com"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go To Example.com<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/h1&gt;<br />
+        &nbsp;&nbsp;&lt;/a&gt;<br />
+        );</i>
+    </li><br />
+    <li>
+      Only ONE outer JSX Element:<br />
+      When using multiple lines of JSX in an expression the outer-most element must be the starting and ending tags. For example this
+      is not allowed.<br /><br />
+      <i>(<br />
+        &lt;h1&gt;Main Header&lt;/h1&gt;<br />
+        &lt;h2&gt;Sub-Header 1&lt;/h2&gt;<br />
+        &lt;p&gt;Stuff goes here&lt;/p&gt;<br />
+        &lt;h2&gt;Sub-Header 2&lt;/h2&gt;<br />
+        )</i>
+        <br /><br />
+      If we simply wrap the elements in a single outer element then we're good.<br /><br />
+      <i>(<br />
+        &lt;div&gt;<br />
+        &nbsp;&nbsp;&lt;h1&gt;Main Header&lt;/h1&gt;<br />
+        &nbsp;&nbsp;&lt;h2&gt;Sub-Header 1&lt;/h2&gt;<br />
+        &nbsp;&nbsp;&lt;p&gt;Stuff goes here&lt;/p&gt;<br />
+        &nbsp;&nbsp;&lt;h2&gt;Sub-Header 2&lt;/h2&gt;<br />
+        &lt;/div&gt;<br />
+        )</i>
+    </li>
+  </ol>
+  <h3>Summary</h3>
+    <ol class='tutorialLists'>
+      <li>
+        JSX Elements are the most basic piece of JSX code and work a lot like their HTML counterparts.
+      </li>
+      <li>
+        JSX attributes are delcared in the same way as HTML attributes.
+      </li>
+      <li>
+        JSX elements can be nested inside each other just like HTML elements.
+      </li>
+      <li>
+        JSX expressions that take up more than one line need to be encompased in parinthesis.
+      </li>
+      <li>
+        The starting and ending tags of JSX expressions must be the same JSX Element.
+      </li>
+    </ol>
+    <p>
+      With me so far?  If you're not 100% confident in how to use JSX elements yet don't worry too much.
+      The next lesson will go over how to actually render JSX Elements in React and will give you examples
+      to work with.  You might consider bookmarking this page as a JSX reference to refer back if needed. 
+    </p>
 </section>  <br />
 <div class='NavBar' id='navBar2'></div>
 </body>

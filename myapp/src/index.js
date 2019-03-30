@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 
-const e = React.createElement('strong',null,'Hello There');;
+const e = React.createElement('strong',null,'Hello There');
 ReactDOM.render(e, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
